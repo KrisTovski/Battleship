@@ -1,13 +1,16 @@
 package com.kristovski;
 
-import com.kristovski.view.GameView;
+import com.kristovski.view.Game;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        GameView gameView = new GameView();
-        gameView.start();
+        Game game = new Game();
+        game.start();
+        game.insertShipsToBoard();
+        game.printCurrentSateOfTheBoard();
+        game.printCurrentStateOfTheBoardWithShipsHidden();
 
     }
 }

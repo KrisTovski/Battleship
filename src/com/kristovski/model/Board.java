@@ -2,17 +2,19 @@ package com.kristovski.model;
 
 public class Board {
 
-    private char[][] board;
+    private final int size;
+    private final char[][] board;
 
-    public Board(char[][] board) {
-        this.board = board;
+    public Board(int size) {
+        this.size = size;
+        board = new char[size][size];
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public char[][] getBoard() {
         return board;
-    }
-
-    public void setBoard(char[][] board) {
-        this.board = board;
     }
 }
