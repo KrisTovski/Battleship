@@ -1,0 +1,6 @@
+com\kristovski\Game.class
+com\kristovski\model\Board.class
+com\kristovski\model\Ship.class
+com\kristovski\model\Point.class
+com\kristovski\utils\Constants.class
+com\kristovski\Main.class
