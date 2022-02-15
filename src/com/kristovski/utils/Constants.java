@@ -9,5 +9,9 @@ public class Constants {
     public static final char SHIP = 'S';
     public static final char HIT = 'X';
     public static final char MISSED = 'o';
+    public static final String HIT_MSG = "HIT";
+    public static final String MISSED_MSG = "MISSED";
+    public static final String WIN_MSG = "CONGRATULATIONS, YOU WIN!";
+    public static final String SUNK_MSG = "SUNK";
 
 }

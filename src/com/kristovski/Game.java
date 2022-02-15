@@ -13,6 +13,7 @@ import static com.kristovski.utils.Constants.*;
 
 public class Game {
 
+    
     private Board board = new Board(BOARD_SIZE);
     private List<Ship> shipList = new ArrayList<>();
 
@@ -45,11 +46,11 @@ public class Game {
 
             if (matrix[y][x] == SHIP) {
                 board.getBoard()[y][x] = HIT;
-                System.out.println("HIT");
+                System.out.println(HIT_MSG);
 
             } else if (matrix[y][x] == WATER) {
                 board.getBoard()[y][x] = MISSED;
-                System.out.println("MISSED");
+                System.out.println(MISSED_MSG);
             }
             checkIfShipSunk();
             printCurrentStateOfTheBoard();
@@ -57,7 +58,7 @@ public class Game {
         } while (!isAllShipSunk());
 
         if (isAllShipSunk()) {
-            System.out.println("CONGRATULATIONS, YOU WIN!");
+            System.out.println(WIN_MSG);
         }
     }
 
@@ -162,7 +163,7 @@ public class Game {
                 }
                 if (lives == 0 && !ship.isDestroyed()) {
                     ship.setDestroyed(true);
-                    System.out.println("SUNK");
+                    System.out.println(SUNK_MSG);
                 }
             }
             if (!ship.isHorizontal()) {
@@ -174,7 +175,7 @@ public class Game {
                 }
                 if (lives == 0 && !ship.isDestroyed()) {
                     ship.setDestroyed(true);
-                    System.out.println("SUNK");
+                    System.out.println(SUNK_MSG);
 
                 }
             }
