@@ -13,7 +13,7 @@ import static com.kristovski.utils.Constants.*;
 
 public class Game {
 
-    
+
     private Board board = new Board(BOARD_SIZE);
     private List<Ship> shipList = new ArrayList<>();
 
