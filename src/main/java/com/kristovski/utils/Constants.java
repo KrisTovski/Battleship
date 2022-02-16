@@ -13,5 +13,7 @@ public class Constants {
     public static final String MISSED_MSG = "MISSED";
     public static final String WIN_MSG = "CONGRATULATIONS, YOU WIN!";
     public static final String SUNK_MSG = "SUNK";
+    public static final String ALREADY_SHOT_HERE = "YOU'VE ALREADY SHOT HERE";
+    public static final String PLAY = "Choose coordinates: e.g. a1, C4, G8, d5 or type \"exit\" to exit the game:";
 
 }

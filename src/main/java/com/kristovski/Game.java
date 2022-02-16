@@ -4,15 +4,11 @@ import com.kristovski.model.Board;
 import com.kristovski.model.Point;
 import com.kristovski.model.Ship;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 import static com.kristovski.utils.Constants.*;
 
 public class Game {
-
 
     private Board board = new Board(BOARD_SIZE);
     private List<Ship> shipList = new ArrayList<>();
@@ -36,14 +32,19 @@ public class Game {
     }
 
     public void play() {
+
+        String coordinates;
+
         do {
-            String coordinates = readCoordinatesFromUser();
+            coordinates = readCoordinatesFromUser();
 
             int x = getXFromLetterCoordinate(coordinates);
             int y = getYFromNumberCoordinate(coordinates);
 
             char[][] matrix = board.getBoard();
-
+            if (matrix[y][x] == HIT || matrix[y][x] == MISSED) {
+                System.out.println(ALREADY_SHOT_HERE);
+            }
             if (matrix[y][x] == SHIP) {
                 board.getBoard()[y][x] = HIT;
                 System.out.println(HIT_MSG);
@@ -64,16 +65,20 @@ public class Game {
 
     private String readCoordinatesFromUser() {
         Scanner scanner = new Scanner(System.in);
-        String coordinates = "";
+        String input = "";
         String pattern = "^[a-jA-J](?:[1-9]|10)$";
-        while (!coordinates.matches(pattern)) {
-            System.out.println("Choose coordinates, e.g. A1, C4, G8, etc: ");
-            coordinates = scanner.nextLine();
-            if (!coordinates.matches(pattern)) {
-                System.out.println("Wrong coordinates: " + coordinates + "\nTry again!");
+        do {
+            System.out.println(PLAY);
+            input = scanner.nextLine();
+            if (input.equalsIgnoreCase("exit")) {
+                System.out.println("YOU LEFT THE GAME, BYE");
+                System.exit(0);
             }
-        }
-        return coordinates;
+            if (!input.matches(pattern)) {
+                System.out.println("Wrong coordinates: " + input + "\nTry again!");
+            }
+        } while (!input.matches(pattern));
+        return input;
     }
 
 
