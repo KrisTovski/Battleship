@@ -5,4 +5,4 @@ Simple, console version of the battleship game.
 - In your teminal go to the directory with BattleShipGame.jar
 - run with command:
 
-java -jar BattleShipGame.jar
+`java -jar BattleShipGame.jar`
